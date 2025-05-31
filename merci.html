@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Merci pour votre réservation</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+  </script>
+  <script>
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+        e.preventDefault();
+      }
+    });
+  </script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #1a1a1a;
+      color: #f5f5f5;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .merci-container {
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out both;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ff6bcb;
+      margin-bottom: 20px;
+      animation: slideDown 1s ease-out;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #ccc;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .btn-retour {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #ff6bcb;
+      color: #000;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+
+    .btn-retour:hover {
+      background-color: #ff8dd8;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="merci-container">
+    <h1>Merci 💖</h1>
+    <p>Votre réservation a bien été envoyée.</p>
+    <p>Je vous contacterai sous peu via WhatsApp ou e-mail pour confirmer.</p>
+    <a class="btn-retour" href="index.html">Retour à l'accueil</a>
+  </div>
+</body>
+</html>

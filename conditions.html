@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conditions de Réservation</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+  </script>
+  <script>
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+        e.preventDefault();
+      }
+    });
+  </script>
+  <style>
+    .conditions-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #2a2a2a;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      color: #f5f5f5;
+    }
+    .conditions-container h2 {
+      color: #ffb6d9;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .conditions-container h3 {
+      margin-top: 25px;
+      color: #ff6bcb;
+    }
+    .conditions-container p {
+      line-height: 1.7;
+      margin-top: 10px;
+      color: #ddd;
+    }
+    a.back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: #ff6bcb;
+      text-decoration: underline;
+    }
+    a.back-link:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Conditions de Réservation</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="reservation.html">Réserver</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="conditions-container">
+      <h2>Conditions Générales de Réservation</h2>
+
+      <h3>🔒 Acompte obligatoire</h3>
+      <p>
+        Toute réservation doit être accompagnée d’un acompte à hauteur de 50% du tarif total
+        (ou la totalité pour les prestations inférieures à 150 €). L’acompte garantit votre créneau et votre engagement.
+      </p>
+
+      <h3>💳 Moyens de paiement acceptés</h3>
+      <p>
+        L'acompte est à verser en ligne via <strong>Transcash</strong> ou tout autre moyen sécurisé
+        fourni après contact (virement, carte prépayée, etc.). Les détails vous seront communiqués par message.
+      </p>
+
+      <h3>📆 Annulation / report</h3>
+      <p>
+        L'acompte est <strong>non remboursable</strong> sauf en cas d'annulation de ma part.
+        Un report est possible une seule fois si vous prévenez minimum 24h à l’avance.
+      </p>
+
+      <h3>🤝 Discrétion & respect</h3>
+      <p>
+        Toute demande irrespectueuse, comportement déplacé ou harcèlement entraînera un
+        <strong>blocage immédiat</strong> et l’annulation sans remboursement. Je me réserve le droit de refuser toute demande.
+      </p>
+
+      <a class="back-link" href="reservation.html">← Retour au formulaire de réservation</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Escort Privée. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>

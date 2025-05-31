@@ -1,0 +1,226 @@
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-bottom: 80px;
+  }
+  
+  /* Liens */
+  a {
+    color: #ff6bcb;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Header */
+  header {
+    background-color: #111;
+    padding: 20px;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  header h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ffb6d9;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  nav a {
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #333;
+    transition: background 0.3s ease;
+  }
+  
+  nav a:hover {
+    background-color: #ff6bcb;
+    color: #000;
+  }
+  
+  /* Main content */
+  main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  section {
+    margin-bottom: 60px;
+  }
+  
+  section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #ffb6d9;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+    color: #777
+  }  
+  form.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  form.reservation-form label {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #f5f5f5;
+  }
+  
+  form.reservation-form input,
+  form.reservation-form select,
+  form.reservation-form textarea {
+    padding: 12px;
+    border: 1px solid #444;
+    background-color: #1e1e1e;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  form.reservation-form textarea {
+    resize: vertical;
+  }
+  
+  form.reservation-form .info {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #ccc;
+    line-height: 1.5;
+  }
+  
+  form.reservation-form button {
+    padding: 12px;
+    background-color: #ff6bcb;
+    color: #000;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  form.reservation-form button:hover {
+    background-color: #ff8dd8;
+  }
+  /* Services & Prestations */
+.tarifs-container,
+.prestations,
+.details {
+  background-color: #2a2a2a;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 40px;
+}
+
+.tarifs-container h3,
+.prestations h3,
+.details h3 {
+  font-size: 1.5em;
+  color: #ffb6d9;
+  margin-bottom: 15px;
+}
+
+.tarifs-container ul,
+.prestations ul,
+.details ul {
+  list-style: disc;
+  padding-left: 25px;
+}
+
+.tarifs-container li,
+.prestations li,
+.details li {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #f5f5f5;
+}
+
+/* Texte explicatif et notes */
+.info,
+.intro {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #ccc;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+strong {
+  color: #ff8dd8;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  main {
+    padding: 0 15px;
+  }
+
+  .tarifs-container,
+  .prestations,
+  .details {
+    padding: 20px;
+  }
+}
+.whatsapp-link {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #25d366;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    text-align: center;
+    transition: background 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .whatsapp-link:hover {
+    background-color: #1ebc59;
+  }

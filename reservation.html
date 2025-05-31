@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Réservation</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+  </script>
+  <script>
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+        e.preventDefault();
+      }
+    });
+  </script>
+  <style>
+    .acompte-info {
+      background-color: #2a2a2a;
+      padding: 15px;
+      margin-top: 15px;
+      border-left: 4px solid #ff6bcb;
+      color: #ddd;
+      border-radius: 8px;
+    }
+    .whatsapp-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 20px;
+      background-color: #25D366;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .whatsapp-link:hover {
+      background-color: #1ebd5c;
+    }
+    .conditions {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    .conditions input {
+      margin-right: 8px;
+    }
+    .payment-link {
+      display: block;
+      margin: 10px 0;
+      padding: 10px 16px;
+      background-color: #ff6bcb;
+      color: #000;
+      border-radius: 6px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .payment-link:hover {
+      background-color: #ff90d8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Réserver une rencontre</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services & Tarifs</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="reservation.html">Réservation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Formulaire de réservation</h2>
+      <form 
+        method="POST" 
+        action="https://formsubmit.co/emilybrook67@gmail.com" 
+        class="reservation-form"
+        onsubmit="return verifierConditions()"
+      >
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://ton-site.com/merci.html">
+
+        <label for="nom">Nom :</label>
+        <input id="nom" name="Nom" type="text" required />
+
+        <label for="ville">Ville :</label>
+        <input id="ville" name="Ville" type="text" required />
+
+        <label for="date">Date souhaitée :</label>
+        <input id="date" name="Date souhaitée" type="date" required />
+
+        <label for="heure">Heure souhaitée :</label>
+        <input id="heure" name="Heure souhaitée" type="time" required />
+
+        <label for="prestation">Prestation souhaitée :</label>
+        <select id="prestation" name="Prestation" onchange="calculerAcompte()" required>
+          <option value="">-- Choisissez une prestation --</option>
+          <option value="1h">1h - 90€</option>
+          <option value="2h">2h - 160€</option>
+          <option value="3h">3h - 210€</option>
+          <option value="soirée">Soirée - 350€</option>
+          <option value="journée">Journée - 500€</option>
+          <option value="weekend">Week-end - 850€</option>
+        </select>
+
+        <label for="deplacement">Déplacement :</label>
+        <select id="deplacement" name="Déplacement">
+          <option value="chez-moi">Je viens à vous</option>
+          <option value="chez-vous">Vous venez à moi</option>
+        </select>
+
+        <label for="details">Détails supplémentaires :</label>
+        <textarea id="details" name="Détails" rows="4" placeholder="Précisez vos envies, lieu, demandes spéciales..."></textarea>
+
+        <!-- Acompte affiché -->
+        <div id="acompte" class="acompte-info">
+          Veuillez choisir une prestation pour afficher le montant de l'acompte.
+        </div>
+
+        <!-- Lien vers paiement Transcash -->
+        <a
+          href="https://www.dundle.com/fr/transcash/" 
+          target="_blank"
+          class="payment-link"
+        >💳 Payer l'acompte en ligne via Transcash</a>
+
+        <!-- Conditions -->
+        <div class="conditions">
+            <p>
+                <a href="conditions.html" target="_blank">Lire les conditions</a>
+            </p>
+          <label>
+            <input type="checkbox" id="accepter-conditions" required />
+            J'ai pris connaissance des conditions et je m'engage à verser l’acompte pour valider ma réservation.
+          </label>
+        </div>
+
+        <button type="submit">Envoyer la demande</button>
+        <label for="code-transcash">Code Transcash (acompte) :</label>
+        <input id="code-transcash" name="Code Transcash" type="text" required placeholder="Ex : 1234 5678 9012" />
+        <a href="https://wa.me/33757755850?text=Bonjour%2C%20voici%20le%20code%20Transcash%20pour%20ma%20réservation%20:%201234%205678%209012" target="_blank">
+            📲 M’envoyer le code Transcash par WhatsApp
+            </a>
+      </form>
+      
+
+      <!-- WhatsApp -->
+      <div style="text-align: center; margin-top: 20px;">
+        <a
+          href="https://wa.me/33757755850?text=Bonjour%2C%20je%20souhaite%20faire%20une%20réservation.%20Voici%20mes%20informations%20:"
+          target="_blank"
+          class="whatsapp-link"
+        >
+          📱 M’envoyer ma demande via WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Escort Privée. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    function calculerAcompte() {
+      const prestation = document.getElementById("prestation").value;
+      const acompteDiv = document.getElementById("acompte");
+
+      const tarifs = {
+        "1h": 90,
+        "2h": 160,
+        "3h": 210,
+        "soirée": 350,
+        "journée": 500,
+        "weekend": 850
+      };
+
+      const prix = tarifs[prestation];
+      if (!prix) {
+        acompteDiv.innerHTML = "Veuillez choisir une prestation pour afficher le montant de l'acompte.";
+        return;
+      }
+
+      const acompte = prix >= 150 ? Math.round(prix * 0.5) : prix;
+      acompteDiv.innerHTML = `
+        <strong>Acompte requis :</strong> ${acompte}€<br>
+        À régler via Transcash (Dundle).<br>
+        Le solde sera dû le jour du rendez-vous.
+      `;
+    }
+
+    function verifierConditions() {
+      const check = document.getElementById("accepter-conditions");
+      if (!check.checked) {
+        alert("Veuillez accepter les conditions avant d’envoyer votre demande.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>
